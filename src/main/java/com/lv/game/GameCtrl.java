@@ -29,6 +29,6 @@ public class GameCtrl {
 
     private int randomNumber() {
         Random rand = new Random();
-        return rand.nextInt(3);
+        return rand.nextInt(RockPaperScissors.values().length);
     }
 }
