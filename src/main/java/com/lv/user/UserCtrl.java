@@ -1,11 +1,12 @@
-package com.lv.game.user;
+package com.lv.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import static com.lv.api.Constants.API_URL;
 
 @RestController
+@RequestMapping(API_URL)
 public class UserCtrl {
     @Autowired
     private final UserRepository userRepository;
@@ -14,7 +15,7 @@ public class UserCtrl {
         this.userRepository = userRepository;
     }
 
-    @PostMapping("/api/v1/user")
+    @PostMapping("/user")
     public User user(@RequestBody User name) {
         return userRepository.save(name);
     }

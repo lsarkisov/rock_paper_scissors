@@ -1,4 +1,4 @@
-package com.lv.game.user;
+package com.lv.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

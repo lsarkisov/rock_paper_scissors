@@ -1,4 +1,4 @@
-package com.lv.game;
+package com.lv;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
