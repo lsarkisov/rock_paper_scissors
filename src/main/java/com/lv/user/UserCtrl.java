@@ -8,6 +8,7 @@ import static com.lv.api.Constants.API_URL;
 @RestController
 @RequestMapping(API_URL)
 public class UserCtrl {
+
     @Autowired
     private final UserRepository userRepository;
 
