@@ -22,9 +22,9 @@ public class GameCtrl {
     @CrossOrigin(origins = API_ORIGIN)
     @PostMapping("/shape")
     public Game userSelection(@RequestBody Game selection) {
-        selection.setComputer(
-                RockPaperScissors.values()[randomNumber()]
-        );
+        RockPaperScissors random = RockPaperScissors.values()[randomNumber()];
+        selection.setComputer(random);
+        selection.setWin(random.equals(selection.getUser()));
         return gameRepository.save(selection);
     }
 
