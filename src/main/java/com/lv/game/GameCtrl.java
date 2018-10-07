@@ -18,7 +18,8 @@ public class GameCtrl {
         this.gameRepository = gameRepository;
     }
 
-    @PostMapping("/selection")
+    @CrossOrigin(origins = "http://localhost:3000")
+    @PostMapping("/shape")
     public Game userSelection(@RequestBody Game selection) {
         selection.setWin(
                 selection.getRps().equals(
