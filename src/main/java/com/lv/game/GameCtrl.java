@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Random;
 
 import static com.lv.api.Constants.API_URL;
+import static com.lv.api.Constants.API_ORIGIN;
 
 @RestController
 @RequestMapping(API_URL)
@@ -18,13 +19,17 @@ public class GameCtrl {
         this.gameRepository = gameRepository;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = API_ORIGIN)
     @PostMapping("/shape")
     public Game userSelection(@RequestBody Game selection) {
-        selection.setWin(
-                selection.getRps().equals(
-                        RockPaperScissors.values()[randomNumber()])
+        RockPaperScissors random = RockPaperScissors.values()[randomNumber()];
+        selection.setComputer(random);
+        selection.setWin(random.equals(selection.getUser()));
+        System.out.println("Comp selection: " +
+                selection.getUser() + ", " + selection.getComputer()
+                + ", " + selection.getWin()
         );
+
         return gameRepository.save(selection);
     }
 

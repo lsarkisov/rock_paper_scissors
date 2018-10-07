@@ -12,16 +12,28 @@ public class Game implements Serializable {
 
     @Enumerated(EnumType.STRING)
     @Column(length = 10)
-    private RockPaperScissors rps;
+    private RockPaperScissors user;
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = 10)
+    private RockPaperScissors computer;
 
     private Boolean win;
 
-    public RockPaperScissors getRps() {
-        return rps;
+    public RockPaperScissors getUser() {
+        return user;
     }
 
-    public void setRps(RockPaperScissors rps) {
-        this.rps = rps;
+    public void setUser(RockPaperScissors user) {
+        this.user = user;
+    }
+
+    public RockPaperScissors getComputer() {
+        return computer;
+    }
+
+    public void setComputer(RockPaperScissors computer) {
+        this.computer = computer;
     }
 
     public Boolean getWin() {
