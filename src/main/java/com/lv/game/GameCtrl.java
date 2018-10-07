@@ -26,6 +26,7 @@ public class GameCtrl {
         selection.setComputer(random);
         selection.setWin(
                 random.equals(selection.getUser()));
+
         return gameRepository.save(selection);
     }
 
