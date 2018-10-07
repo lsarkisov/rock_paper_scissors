@@ -19,12 +19,13 @@ public class GameCtrl {
         this.gameRepository = gameRepository;
     }
 
-    @CrossOrigin(origins = API_ORIGIN)
     @PostMapping("/shape")
+    @CrossOrigin(origins = API_ORIGIN)
     public Game userSelection(@RequestBody Game selection) {
         RockPaperScissors random = RockPaperScissors.values()[randomNumber()];
         selection.setComputer(random);
-        selection.setWin(random.equals(selection.getUser()));
+        selection.setWin(
+                random.equals(selection.getUser()));
         return gameRepository.save(selection);
     }
 
