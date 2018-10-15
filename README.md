@@ -1,8 +1,5 @@
-<h1 align="center">
-  Rock paper scessors
-</h1>
+# Rock paper scessors
 
-    This project is backend part for 
+This project is backend part for
 
-    [https://github.com/lsarkisov/rock_paper_scissors_front-end](https://github.com/lsarkisov/rock_paper_scissors_front-end)
-
+[https://github.com/lsarkisov/rock_paper_scissors_front-end](https://github.com/lsarkisov/rock_paper_scissors_front-end)
